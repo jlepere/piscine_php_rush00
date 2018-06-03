@@ -43,8 +43,8 @@ include('views/header.php'); ?>
         if (isset($register_error))
           echo '<p><strong>'. $register_error .'</strong></p>'; ?>
       <form action="" method="post">
-        Identifiant: <input type="text" name="user_name" value="<?php if (isset($user_name)) { echo $user_name; } ?>"><br>
-        Mot de passe: <input type="password" name="user_password"><br>
+        <p><label>Identifiant:</label> <input type="text" name="user_name" value="<?php if (isset($user_name)) { echo $user_name; } ?>"></p>
+        <p><label>Mot de passe:</label> <input type="password" name="user_password"></p>
         <input type="submit" name="user_register" value="<?php echo $page_title; ?>">
       </form>
       <?php } ?>

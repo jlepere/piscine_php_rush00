@@ -22,7 +22,7 @@ include('views/header.php'); ?>
         <li><a href="admin.php?section=users" title="Liste des comptes">Liste des comptes</a></li>
         <li><a href="admin.php?section=categories" title="Gestion des catégories">Gestion des catégories</a></li>
         <li><a href="admin.php?section=items" title="Gestion des produits">Gestion des produits</a></li>
-        <li><a href="admin.php?section=orders" title="Gestion des commandes">Gestion des commandes</a></li>
+        <!--<li><a href="admin.php?section=orders" title="Gestion des commandes">Gestion des commandes</a></li>-->
       </ul>
     </nav>
     <div class="content">
@@ -33,8 +33,8 @@ include('views/header.php'); ?>
           include('admin/admin_categories.php');
         else if ($_GET['section'] === 'items')
           include('admin/admin_items.php');
-        else if ($_GET['section'] === 'orders')
-          include('admin/admin_orders.php');
+        /*else if ($_GET['section'] === 'orders')
+          include('admin/admin_orders.php');*/
       } ?>
     </div>
   </div>

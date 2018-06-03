@@ -45,4 +45,21 @@ if ($create_db && mysqli_select_db($db_conx, $config['db_base'])) {
     PRIMARY KEY (item_id),
     UNIQUE (item_id, item_name)
   )");
+
+  $create_order = mysqli_query($db_conx, "CREATE TABLE IF NOT EXISTS orders (
+    order_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    PRIMARY KEY (order_id),
+    UNIQUE (order_id)
+  )");
+  $create_sales = mysqli_query($db_conx, "CREATE TABLE IF NOT EXISTS sales (
+    sale_id INT NOT NULL AUTO_INCREMENT,
+    order_id INT NOT NULL,
+    item_id INT NOT NULL,
+    item_count INT NOT NULL,
+    PRIMARY KEY (sale_id),
+    UNIQUE (sale_id)
+  )");
+  if ($create_user && $create_categories && $create_items && $create_order && $create_sales)
+    echo 'DB OK !';
 } ?>

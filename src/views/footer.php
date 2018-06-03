@@ -5,6 +5,6 @@
     	   <small>&copy; jlepere &amp; sdjeghba</small>
       </div>
     </footer>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
   </body>
 </html>

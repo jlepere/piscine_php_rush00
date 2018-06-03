@@ -1,0 +1,192 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	background-color: #efefef;
+	font: normal 16px sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	max-width: 1060px;
+	min-width: 900px;
+	position: relative;
+	margin: 0 auto;
+}
+
+header {
+	height: 120px;
+	color: #fff;
+	background-color: #383838;
+	display: flex;
+	align-items: center;
+}
+
+header a {
+		color: #fff;
+}
+
+#logo {
+	text-align: center;
+	text-decoration: none;
+}
+
+.header-text {
+	text-align: center;
+	padding: 15px 0;
+}
+
+.header-text a {
+	transition: color .2s ease-in-out;
+}
+
+.header-text a:hover {
+	color: #11b111;
+}
+
+section.page > .container {
+	background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	padding: 30px 20px;
+}
+
+.sidebar {
+	width: 250px;
+	flex-shrink: 0;
+	margin-right: 35px;
+}
+
+.content {
+	width: 100%;
+}
+
+.content h2 {
+  color: #383838;
+}
+
+.page-item h2 {
+	line-height: 50px;
+}
+
+.page-item p.desc {
+	margin-bottom: 20px;
+}
+
+.page-item p.price {
+	float: left;
+}
+
+.page-item p.count {
+	text-align: right;
+	color: #11b111;
+}
+
+.page-item p.count.low {
+	color: #f3b559;
+}
+
+.page-item p.count.none {
+	color: #c32626;
+}
+
+.page-item img.photo {
+	width: 350px;
+	min-height: 200px;
+	float: left;
+	margin: 0 20px 0 0;
+}
+
+.page-item a.panier {
+	width: 100%;
+	text-align: right;
+	display: block;
+	margin-top: 20px;
+}
+
+ul.item-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+ul.item-list li {
+	width: calc(50% - 20px);
+	border: 1px solid #ccc;
+	margin: 20px 0;
+}
+
+ul.item-list li > a {
+	width: calc(100% - 20px);
+	/*height: calc(100% - 20px);*/
+	color: #000;
+	display: block;
+	position: relative;
+	padding: 10px;
+}
+
+ul.item-list li img {
+	width: auto;
+	height: auto;
+	max-width: 200px;
+	max-height: 200px;
+	margin: 5px auto;
+	display: block;
+}
+
+ul.item-list li p.name {
+	font-size: 18px;
+	font-weight: bold;
+	line-height: 34px;
+}
+
+ul.item-list li p.desc {padding-bottom: 60px;}
+
+ul.item-list li p.info {
+    line-height: 20px;
+    color: #fff;
+    background-color: #11b111;
+    position: absolute;
+    bottom: 15px;
+    right: -1px;
+    text-align: right;
+    padding: 5px 10px;
+}
+
+ul.item-list li p.info.low {background-color: #f3b559;}
+
+ul.item-list li p.info.none {background-color: #c32626;}
+
+ul.item-list li p.info span {
+	display: block;
+}
+
+#item_user_list {
+	margin: 15px 0;
+}
+
+ul.item_user_list li {
+	padding: 5px;
+	border-bottom: 1px solid #ccc;
+	margin: 5px 0
+}
+
+ul.item_user_list li:last-child {
+	border: 0;
+}
+
+footer {
+	text-align: center;
+	color: #fff;
+	background-color: #383838;
+	padding: 10px 0;
+}

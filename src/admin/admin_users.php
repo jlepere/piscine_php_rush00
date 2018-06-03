@@ -59,7 +59,7 @@ if ($_GET['action'] === 'add') { ?>
 <?php } else if ($_GET['action'] === 'modif' && !empty($row)) { ?>
 <form action="admin.php?section=users&action=modif" method="post">
   Nom de l'utilisateur : <span><?php echo $_GET['user_name']; ?></span><input type="hidden" name="user_name" value="<?php echo $_GET['user_name'] ?>"><br>
-	Rang de l'utilisateur : <select name="user_rank"><option value="0" <?php if (!$row[0][4]) { echo 'selected'; } ?>>Membre</option><option value="1" <?php if ($row[0][4]) { echo 'selected'; } ?>>admin</option></select><br>
+	Rang de l'utilisateur : <select name="user_rank"><option value="0" <?php if ($row[0][4] === 0) { echo 'selected'; } ?>>Membre</option><option value="1" <?php if ($row[0][4] === 1) { echo 'selected'; } ?>>admin</option></select><br>
 	Crédit de l'utilisateur : <input type="number" name="user_credit" value="<?php echo $row[0][5]; ?>"><br>
 	<input type="submit" name="submit_user" value="Modifier">
 </form>

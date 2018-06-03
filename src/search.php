@@ -11,17 +11,32 @@ if (!($db_conx = mysqli_connect($config['db_host'], $config['db_user'], $config[
 
 $user_logged = user_is_logged($db_conx);
 
-$page_title = 'Accueil';
+$page_title = 'Recherche';
 $category_list = mysqli_query($db_conx, "SELECT * FROM categories");
-$item_list = mysqli_query($db_conx, "SELECT * FROM items ORDER BY item_id DESC LIMIT 6");
+$search_item = array();
+if (isset($_GET['name_search_submit']) && !empty($_GET['item_name'])) {
+  $item_list = mysqli_query($db_conx, "SELECT * FROM items");
+  while ($item = mysqli_fetch_assoc($item_list)) {
+    if (strpos(strtolower($item['item_name']), strtolower($_GET['item_name'])) !== false)
+      $search_item[] = $item;
+  }
+}
+if (isset($_GET['category_search_submit']) && !empty($_GET['category_search'])) {
+  $item_list = mysqli_query($db_conx, "SELECT * FROM items");
+  while ($item = mysqli_fetch_assoc($item_list)) {
+    if (strpos(strtolower($item['item_categories']), strtolower($_GET['category_search'] .',')) !== false)
+      $search_item[] = $item;
+  }
+}
+
 include('views/header.php'); ?>
 <section class="page">
   <div class="container">
     <?php include('views/sidebar.php'); ?>
     <div class="content">
-      <?php if (mysqli_num_rows($item_list) != 0) { ?>
+      <?php if (count($search_item) != 0) { ?>
       <ul class="item-list">
-        <?php while ($item = mysqli_fetch_assoc($item_list)) { ?>
+        <?php foreach ($search_item as $item) { ?>
         <li>
           <a href="item.php?id=<?php echo $item['item_id']; ?>" title="<?php echo $item['item_name']; ?>">
             <p class="name"><?php echo $item['item_name']; ?></p>
@@ -33,7 +48,7 @@ include('views/header.php'); ?>
         <?php } ?>
       </ul>
       <?php } else {
-        echo '<p>Il n\'a pas de produits dans la base de donnée !';
+        echo '<p>Cette recherche n\'a rien donnée !</p>';
       } ?>
     </div>
   </div>
